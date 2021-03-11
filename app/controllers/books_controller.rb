@@ -1,4 +1,4 @@
-class BookController < ApplicationController
+class BooksController < ApplicationController
   def index
   end
 
@@ -10,9 +10,9 @@ class BookController < ApplicationController
   end
 
   def create
-    book = Book.new(blog_params)
+    book = Book.new(book_params)
     book.save
-    redirect_to book_path
+    redirect_to book_path(book)
   end
 
   def edit
