@@ -106,24 +106,29 @@
   </tbody>
 </table>
 
-
 <h2>New book</h2>
-<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="yMioUL8gYleg3WJxMbDBKUtLdn/YnALrbMdoqcPcF0YnwXLldFvLvHLzgLFMk43G8KR2lIRKpK+qmVzUh/alug==">
+<!--<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="yMioUL8gYleg3WJxMbDBKUtLdn/YnALrbMdoqcPcF0YnwXLldFvLvHLzgLFMk43G8KR2lIRKpK+qmVzUh/alug==">-->
+<%= form_with model:@book, local:true do |f| %>
+  <!--<div class="field">-->
+    <!--<label for="book_title">Title</label>-->
+    <h4>Title</h4>
+    <!--<input class="book_title" type="text" name="book[title]" id="book_title">-->
+    <%= f.text_field :title %>
+  <!--</div>-->
 
-  <div class="field">
-    <label for="book_title">Title</label>
-    <input class="book_title" type="text" name="book[title]" id="book_title">
-  </div>
+  <!--<div class="field">-->
+    <!--<label for="book_body">Body</label>-->
+    <!--<textarea class="book_body" name="book[body]" id="book_body"></textarea>-->
+    <h4>Body</h4>
+    <%= f.text_area :body %>
+  <!--</div>-->
 
-  <div class="field">
-    <label for="book_body">Body</label>
-    <textarea class="book_body" name="book[body]" id="book_body"></textarea>
-  </div>
-
-  <div class="actions">
-    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
-  </div>
-</form>
+  <!--<div class="actions">-->
+    <!--<input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">-->
+    <%= f.submit 'CreateBook' %>
+  <!--</div>-->
+<% end %>
+<!--</form>-->
 
 
 </body></html>
