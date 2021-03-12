@@ -103,6 +103,18 @@
         <td><a class="edit_263368" href="/books/263368/edit">Edit</a></td>
         <td><a data-confirm="Are you sure?" class="destroy_263368" rel="nofollow" data-method="delete" href="/books/263368">Destroy</a></td>
       </tr>
+      <!--ここから変更-->
+       <% @books.each do |book| %>
+       <tr>
+         <td><%= book.title %></td>
+         <td><%= book.body %></td>
+        <td><%= link_to"Show","/books/#{book.id}"%></td>
+        <td><%= link_to"Edit","/books/#{book.id}/edit" %></td>
+        <td><%= link_to "Destroy","/books/#{book.id}", method: :delete, "data-confirm" => "Are you sure?" %></td>
+
+       </tr>
+      <% end %>
+
   </tbody>
 </table>
 
