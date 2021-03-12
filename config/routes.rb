@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :books
   root :to => 'homes#top'
   #get 'books' => 'books#show'
+  
+  
 end
